@@ -1,0 +1,20 @@
+#!/usr/bin/env -S just --justfile
+# just reference  : https://just.systems/man/en/
+
+@default:
+    just --list
+
+clean:
+    rm -rf builddir
+
+init:
+    mkdir builddir
+    meson setup builddir
+
+compile:
+    cd builddir
+    meson compile
+
+install:
+    cd builddir
+    meson install
