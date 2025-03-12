@@ -8,13 +8,10 @@ clean:
     rm -rf builddir
 
 init:
-    mkdir builddir
-    meson setup builddir
+    mkdir builddir && meson setup builddir
 
 compile:
-    cd builddir
-    meson compile
+    cd builddir && meson compile
 
 install:
-    cd builddir
-    meson install
+    cd builddir && meson install
